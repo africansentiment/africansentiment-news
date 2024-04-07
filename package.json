@@ -1,0 +1,15 @@
+{
+  "name": "africansentiment-news",
+  "version": "1.0.0",
+  "description": "A full-stack web app for newspaper article sentiment analysis.",
+  "scripts": {
+    "install": "cd backend && npm install && cd ../frontend && npm install",
+    "start-backend": "cd backend && node app.js",
+    "start-frontend": "cd frontend && npm start",
+    "test-backend": "cd backend && npm test",
+    "test-frontend": "cd frontend && npm test",
+    "test-e2e": "cd frontend && npx cypress open"
+  },
+  "author": "",
+  "license": "ISC"
+}
