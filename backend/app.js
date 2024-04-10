@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Article = require('./models/Article');
-const Publisher = require('./models/Publisher');
+const articleRoutes = require('./routes/articles'); // Import the articles routes
+const publisherRoutes = require('./routes/publishers'); // Assuming you have a publishers route file
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -15,28 +15,18 @@ const port = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 
-// Routes
+// Use the articles routes for requests to /articles
+app.use('/articles', articleRoutes);
+
+// Assuming you have publisher routes set up similarly to article routes
+app.use('/publishers', publisherRoutes);
+
+// Basic route for home
 app.get('/', (req, res) => res.send('AfricanSentiment News API is running.'));
 
-app.get('/articles', async (req, res) => {
-  try {
-    const articles = await Article.find();
-    res.json(articles);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-
-app.get('/publishers', async (req, res) => {
-  try {
-    const publishers = await Publisher.find();
-    res.json(publishers);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-
 // Start the server
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 module.exports = app;
