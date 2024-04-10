@@ -3,13 +3,20 @@
   "version": "1.0.0",
   "description": "A full-stack web app for newspaper article sentiment analysis.",
   "scripts": {
-    "install": "cd backend && npm install && cd ../frontend && npm install",
-    "start-backend": "cd backend && node app.js",
+    "install": "npm run install-backend && npm run install-frontend",
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
+    "start-backend": "cd backend && npm run start",
     "start-frontend": "cd frontend && npm start",
+    "dev-backend": "cd backend && npm run dev",
     "test-backend": "cd backend && npm test",
     "test-frontend": "cd frontend && npm test",
     "test-e2e": "cd frontend && npx cypress open"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Your Name or Organization",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
 }

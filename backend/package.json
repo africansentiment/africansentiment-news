@@ -1,19 +1,30 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend service for the AfricanSentiment News application",
   "main": "app.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "express",
+    "mongoose",
+    "api",
+    "news",
+    "sentiment-analysis"
+  ],
+  "author": "Your Name or Organization",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
     "mongoose": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }

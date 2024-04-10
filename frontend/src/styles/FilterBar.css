@@ -1,0 +1,11 @@
+/* FilterBar.css */
+.filter-bar {
+  background-color: #e2e2e2;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-bar input,
+.filter-bar select {
+  margin-right: 10px;
+}
