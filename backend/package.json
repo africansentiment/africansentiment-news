@@ -21,7 +21,7 @@
   "author": "Your Name or Organization",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
+    "express": "^4.21.1",
     "mongoose": "^8.3.0"
   },
   "devDependencies": {
